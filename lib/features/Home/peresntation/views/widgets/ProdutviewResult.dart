@@ -13,7 +13,7 @@ class ProdutviewResult extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          '$productleanthنتائج',
+          '${productleanth}  نتائج',
           style: AppStyle.bold16.copyWith(
             color: const Color(0xFF0C0D0D),
           ),

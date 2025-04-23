@@ -14,5 +14,7 @@ final class ProductCubitFailure extends ProductState {
 
 final class ProductCubitSuccess extends ProductState {
   final List<ProductEntity> products;
-  ProductCubitSuccess(this.products);
+  final int? productLength;
+
+  ProductCubitSuccess(this.products, {this.productLength});
 }

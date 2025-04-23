@@ -12,9 +12,11 @@ class OrederRepoImpl implements OrderRepo {
   @override
   Future<Either<Failur, void>> addOrder(OrderInputEntity orderEntity) async {
     try {
+      var order = OrderModel.fromOEntity(orderEntity);
       await dataBaseServeces.addData(
           path: BackEndImpoint.addOrders,
-          data: OrderModel.fromOEntity(orderEntity).toJson());
+          documentId:order.oID ,
+          data: order.toJson());
       return const Right(null);
     } catch (e) {
       return Left(ServerFailure(e.toString()));

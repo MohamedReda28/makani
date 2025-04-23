@@ -38,6 +38,7 @@ class _SplashVeiwState extends State<SplashVeiw> {
           var isloggedIn = FirebaseAuthServece().isLoggedIn();
 
           if (isloggedIn) {
+
             Navigator.pushReplacementNamed(context, MainView.routeName);
           } else {
             Navigator.pushReplacementNamed(context, SiginView.routeName);

@@ -11,11 +11,11 @@ class productRepoImpl implements ProductRepo {
   final DataBaseServeces dataBaseServeces;
   productRepoImpl({required this.dataBaseServeces});
   @override
-  Future<Either<Failur, List<ProductEntity>>> getBestSellingProduct() async {
+  Future<Either<Failur, List<ProductEntity>>> getSomeBestSellingProduct() async {
     try {
       var data = await dataBaseServeces
           .getData(path: BackEndImpoint.getproducts, query: {
-        'limit': 10,
+        'limit': 2,
         'orderBy': 'sellingcount',
         'descending': true,
       }) as List<Map<String, dynamic>>;
@@ -24,6 +24,25 @@ class productRepoImpl implements ProductRepo {
           data.map((e) => ProductModel.fromJson(e)).toList();
       List<ProductEntity> productEntit =
           products.map((e) => e.toEntity()).toList();
+      return right(productEntit);
+    } catch (e) {
+      return left(ServerFailure('Failed to load products'));
+    }
+  }
+
+  Future<Either<Failur, List<ProductEntity>>> getAllBestSellingProduct() async {
+    try {
+      var data = await dataBaseServeces
+          .getData(path: BackEndImpoint.getproducts, query: {
+        'limit': 5,
+        'orderBy': 'sellingcount',
+        'descending': true,
+      }) as List<Map<String, dynamic>>;
+
+      List<ProductModel> products =
+      data.map((e) => ProductModel.fromJson(e)).toList();
+      List<ProductEntity> productEntit =
+      products.map((e) => e.toEntity()).toList();
       return right(productEntit);
     } catch (e) {
       return left(ServerFailure('Failed to load products'));

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
+import '../uitels/App_Color.dart';
 import '../uitels/app_images.dart';
 
 class CustomNotifcation extends StatelessWidget {
@@ -11,7 +12,7 @@ class CustomNotifcation extends StatelessWidget {
       width: 34,
       height: 34,
       decoration: const ShapeDecoration(
-        color: Color(0xFFEEF8ED),
+        color: AppColor.lightPrimaryColor,
         shape: OvalBorder(),
       ),
       child: Center(child: SvgPicture.asset(Assets.imagesNotification)),

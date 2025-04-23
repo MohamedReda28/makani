@@ -23,7 +23,7 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   void initState() {
-    context.read<ProductCubit>().getBestSellingProduct();
+    context.read<ProductCubit>().getSomeBestSellingProduct();
     super.initState();
   }
 
@@ -62,7 +62,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ],
             ),
           ),
-          ProductsGridviewBlocBuilder(),
+           const ProductsGridviewBlocBuilder(),
         ],
       ),
     );

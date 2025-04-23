@@ -8,24 +8,40 @@ part 'product_cubit_state.dart';
 class ProductCubit extends Cubit<ProductState> {
   ProductCubit(this.productRepo) : super(ProductCubitInitial());
   final ProductRepo productRepo;
-  int productleanth = 0;
+  int productLength = 0;
 
   Future<void> getProducts() async {
     emit(ProductCubitLoading());
     final result = await productRepo.getProduct();
+
     result.fold(
-      (failur) => emit(ProductCubitFailure(failur.message)),
-      (products) => emit(ProductCubitSuccess(products)),
+          (failure) => emit(ProductCubitFailure(failure.message)),
+          (products) {
+        productLength += products.length;
+        emit(ProductCubitSuccess(products, productLength: productLength ));
+      },
     );
   }
 
-  Future<void> getBestSellingProduct() async {
+
+
+  Future<void> getSomeBestSellingProduct() async {
     emit(ProductCubitLoading());
-    final result = await productRepo.getBestSellingProduct();
+    final result = await productRepo.getSomeBestSellingProduct();
     result.fold((failur) => emit(ProductCubitFailure(failur.message)),
         (products) {
-      productleanth += products.length;
-      emit(ProductCubitSuccess(products));
+      emit(ProductCubitSuccess(products,));
+
     });
+  }
+
+  Future<void> getAllBestSellingProduct() async {
+    emit(ProductCubitLoading());
+    final result = await productRepo.getAllBestSellingProduct();
+    result.fold((failur) => emit(ProductCubitFailure(failur.message)),
+            (products) {
+          emit(ProductCubitSuccess(products,));
+
+        });
   }
 }

@@ -9,6 +9,7 @@ import '../../../../../core/uitels/App_Color.dart';
 import '../../../../../core/uitels/App_TextStyle.dart';
 import '../../../../../core/uitels/app_images.dart';
 import '../../cubits/Signin_Cubit/cubit/signin_cubit.dart';
+import '../ForgetPass.dart';
 import '../SignupView.dart';
 import 'Custom Driver And Text.dart';
 import 'Dont Have Account Widgh.dart';
@@ -62,10 +63,15 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    'نسيت كلمة المرور؟',
-                    style: AppStyle.semibold13
-                        .copyWith(color: AppColor.lightPrimaryColor),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushReplacementNamed(context, ForgetpassView.routeName);
+                    },
+                    child: Text(
+                      'نسيت كلمة المرور؟',
+                      style: AppStyle.semibold13
+                          .copyWith(color: AppColor.lightPrimaryColor),
+                    ),
                   ),
                 ],
               ),

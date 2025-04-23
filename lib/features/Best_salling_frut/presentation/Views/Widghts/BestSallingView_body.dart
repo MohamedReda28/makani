@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../constsns.dart';
 import '../../../../../core/Widghts/CustomAppbar2.dart';
+import '../../../../../core/cubits/product_cubit/product_cubit_cubit.dart';
 import '../../../../../core/uitels/App_TextStyle.dart';
 import '../../../../Home/peresntation/views/widgets/ProductsGridviewBlocBuilder.dart';
-import '../../../../Home/peresntation/views/widgets/ProductsGridview.dart';
 
-class BestsallingviewBody extends StatelessWidget {
+class BestsallingviewBody extends StatefulWidget {
   const BestsallingviewBody({super.key});
 
+  @override
+  State<BestsallingviewBody> createState() => _BestsallingviewBodyState();
+
+}
+
+class _BestsallingviewBodyState extends State<BestsallingviewBody> {
+  @override
+  void initState() {
+    context.read<ProductCubit>().getAllBestSellingProduct();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return const Padding(
@@ -29,7 +41,7 @@ class BestsallingviewBody extends StatelessWidget {
             ],
           ),
         ),
-        // BestsillingGridview(),
+        ProductsGridviewBlocBuilder(),
       ]),
     );
   }

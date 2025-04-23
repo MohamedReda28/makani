@@ -97,4 +97,26 @@ class FirebaseAuthServece {
   Future deleteUser() async {
     await FirebaseAuth.instance.currentUser!.delete();
   }
+
+  Future<void> sendPasswordResetEmail({required String email}) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      log('Exception in sendPasswordResetEmail: ${e.toString()}');
+      if (e.code == 'user-not-found') {
+        throw CustomException(
+            message: 'لا يوجد حساب مرتبط بهذا البريد الإلكتروني');
+      } else if (e.code == 'invalid-email') {
+        throw CustomException(message: 'صيغة البريد الإلكتروني غير صحيحة');
+      } else if (e.code == 'network-request-failed') {
+        throw CustomException(message: 'يرجى التحقق من الاتصال بالإنترنت');
+      } else {
+        throw CustomException(
+            message: 'حدث خطأ أثناء إرسال الرابط، حاول لاحقًا');
+      }
+    } catch (e) {
+      log('Unknown exception in sendPasswordResetEmail: ${e.toString()}');
+      throw CustomException(message: 'حدث خطأ غير متوقع، حاول لاحقًا');
+    }
+  }
 }
