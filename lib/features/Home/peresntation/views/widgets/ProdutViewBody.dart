@@ -7,6 +7,7 @@ import '../../../../../core/Widghts/CustomAppbar2.dart';
 import '../../../../../core/Widghts/customErrorWidght.dart';
 import '../../../../../core/cubits/product_cubit/product_cubit_cubit.dart';
 import '../../../../../core/helpes_function/git_dammy_Product.dart';
+import '../../../../Searchview/SearchView.dart';
 import 'CustomTextFiledForSearch.dart';
 import 'ProductsGridview.dart';
 import 'ProductsGridviewBlocBuilder.dart';
@@ -46,19 +47,20 @@ class _ProdutViewBodyState extends State<ProdutViewBody> {
                     const SizedBox(
                       height: 16,
                     ),
-                    const CustomTextFiledForSearch(),
+                    CustomTextFiledForSearch(ontap: () {
+                      Navigator.of(context).pushNamed(Searchview.routeName);
+                    }),
                     const SizedBox(
                       height: 12,
                     ),
-                    ProdutviewResult(
-                        productleanth: state.productLength!),
+                    ProdutviewResult(productleanth: state.productLength!),
                     const SizedBox(
                       height: 12,
                     ),
                   ],
                 ),
               ),
-               const ProductsGridviewBlocBuilder(),
+              const ProductsGridviewBlocBuilder(),
             ],
           ),
         );
@@ -77,4 +79,3 @@ class _ProdutViewBodyState extends State<ProdutViewBody> {
     });
   }
 }
-

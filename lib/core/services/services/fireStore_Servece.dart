@@ -18,30 +18,73 @@ class FirestoerServeces implements DataBaseServeces {
   }
 
   @override
-  Future<dynamic> getData(
-      {required String path,
-      String? documentId,
-      Map<String, dynamic>? query}) async {
+  // Future<dynamic> getData(
+  //     {required String path,
+  //     String? documentId,
+  //     Map<String, dynamic>? query}) async {
+  //   if (documentId != null) {
+  //     var data = await firestore.collection(path).doc(documentId).get();
+  //     return data.data();
+  //   } else {
+  //     Query<Map<String, dynamic>> data = firestore.collection(path);
+  //     if (query != null) {
+  //       if (query['orderBy'] != null) {
+  //         var orderByFiald = query['orderBy'];
+  //         var descending = query['descending'];
+  //         data = data.orderBy(orderByFiald, descending: descending);
+  //       }
+  //       if (query['limit'] != null) {
+  //         var limit = query['limit'];
+  //         data = data.limit(limit);
+  //       }
+  //     }
+  //     var result = await data.get();
+  //     return result.docs.map((e) => e.data()).toList();
+  //   }
+  // }
+  Future<dynamic> getData({
+    required String path,
+    String? documentId,
+    Map<String, dynamic>? query,
+  }) async {
     if (documentId != null) {
+      // جلب مستند محدد بالـ ID
       var data = await firestore.collection(path).doc(documentId).get();
       return data.data();
     } else {
       Query<Map<String, dynamic>> data = firestore.collection(path);
+
       if (query != null) {
-        if (query['orderBy'] != null) {
-          var orderByFiald = query['orderBy'];
-          var descending = query['descending'];
-          data = data.orderBy(orderByFiald, descending: descending);
+        // ✳️ دعم البحث بالكلمة المفتاحية
+        if (query['searchField'] != null && query['keyword'] != null) {
+          final field = query['searchField'];
+          final keyword = query['keyword'];
+
+          data = data
+              .orderBy(field)
+              .startAt([keyword])
+              .endAt(['$keyword\uf8ff']);
         }
+
+        // ترتيب النتائج
+        if (query['orderBy'] != null) {
+          var orderByField = query['orderBy'];
+          var descending = query['descending'] ?? false;
+          data = data.orderBy(orderByField, descending: descending);
+        }
+
+        // تحديد عدد النتائج
         if (query['limit'] != null) {
           var limit = query['limit'];
           data = data.limit(limit);
         }
       }
+
       var result = await data.get();
       return result.docs.map((e) => e.data()).toList();
     }
   }
+
 
   @override
   Future<bool> chackIfDataExist(

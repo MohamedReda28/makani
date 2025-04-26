@@ -113,6 +113,7 @@ class Assets {
   /// Assets for imagesMenue1
   /// Assets/Images/menue1.jpg
   static const String imagesMenue1 = "Assets/Images/menue1.jpg";
+  static const String imagesSearch = "Assets/Images/searchImage.png";
 
   /// Assets for imagesMenue2
   /// Assets/Images/menue2.jpg
@@ -160,7 +161,7 @@ class Assets {
 
   /// Assets for imagesSearch
   /// Assets/Images/search.svg
-  static const String imagesSearch = "Assets/Images/search.svg";
+  static const String imagesSearchIcon = "Assets/Images/search.svg";
 
   /// Assets for imagesShoppingCart
   /// Assets/Images/shopping-cart.svg

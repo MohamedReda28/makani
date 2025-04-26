@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import '../../../../../constsns.dart';
 import '../../../../../core/cubits/product_cubit/product_cubit_cubit.dart';
 import '../../../../Best_salling_frut/presentation/Views/Best Salling view.dart';
+import '../../../../Searchview/SearchView.dart';
 import 'CustomBestSalar.dart';
 import 'CustomTextFiledForSearch.dart';
 import 'Custom_Home_Appbar.dart';
@@ -43,7 +43,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomTextFiledForSearch(),
+                CustomTextFiledForSearch(
+                  ontap: () {
+                    Navigator.of(context).pushNamed(Searchview.routeName);
+                  },
+                ),
                 const SizedBox(
                   height: 12,
                 ),
@@ -62,7 +66,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ],
             ),
           ),
-           const ProductsGridviewBlocBuilder(),
+          const ProductsGridviewBlocBuilder(),
         ],
       ),
     );
