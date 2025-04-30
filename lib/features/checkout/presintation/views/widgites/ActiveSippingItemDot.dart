@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makani/core/uitels/App_Color.dart';
 
 class ActiveSippingItemDot extends StatelessWidget {
   const ActiveSippingItemDot({super.key});
@@ -8,8 +9,8 @@ class ActiveSippingItemDot extends StatelessWidget {
     return Container(
       width: 18,
       height: 18,
-      decoration: ShapeDecoration(
-        color: Color(0xFF1B5E37),
+      decoration:  const ShapeDecoration(
+        color: AppColor.kPrimaryColor,
         shape: OvalBorder(
           side: BorderSide(width: 4, color: Colors.white),
         ),

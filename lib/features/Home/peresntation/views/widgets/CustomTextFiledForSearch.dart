@@ -22,7 +22,7 @@ class CustomTextFiledForSearch extends StatelessWidget {
         ]),
         child: Row(
           children: [
-            SvgPicture.asset(Assets.imagesSearchIcon),
+            SvgPicture.asset(Assets.imagesSearch),
             const SizedBox(
               width: 20,
             ),
@@ -32,8 +32,6 @@ class CustomTextFiledForSearch extends StatelessWidget {
                 color: const Color(0xFF949D9E),
               ),
             ),
-            Spacer(),
-            SvgPicture.asset(Assets.imagesFilter)
           ],
         ),
       ),

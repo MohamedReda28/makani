@@ -12,7 +12,7 @@ class CustomNotifcation extends StatelessWidget {
       width: 34,
       height: 34,
       decoration: const ShapeDecoration(
-        color: AppColor.lightPrimaryColor,
+
         shape: OvalBorder(),
       ),
       child: Center(child: SvgPicture.asset(Assets.imagesNotification)),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:makani/core/uitels/App_Color.dart';
 import '../../../features/Home/peresntation/cubits/cart/cart_cubit_cubit.dart';
 import '../../entitys/ProductEntity.dart';
@@ -33,35 +34,47 @@ class CustomFrutDisplay extends StatelessWidget {
           ),
           Positioned.fill(
             child: Column(
+
               children: [
-                const SizedBox(
-                  height: 20,
-                ),
-                CustomNetworkImage(
-                  imageUrl: productEntity.imageUrl!,
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                ListTile(
-                  title: Text(
-                    productEntity.name,
-                    textAlign: TextAlign.right,
-                    style: AppStyle.semibold13.copyWith(
-                      color: const Color(0xFF0C0D0D),
-                    ),
+                Expanded(
+                  flex:1,
+                  child: SizedBox(
+                    height: 20.h,
                   ),
-                  subtitle: FittedBox(
-                      child: RichTextforSubtitle(productEntity: productEntity)),
-                  trailing: GestureDetector(
-                    onTap: () {
-                      context.read<CartCubit>().AddProduct(productEntity);
-                    },
-                    child:  const CircleAvatar(
-                      backgroundColor: AppColor.kPrimaryColor,
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.white,
+                ),
+                Expanded(
+                  flex: 2,
+                  child: CustomNetworkImage(
+                    imageUrl: productEntity.imageUrl!,
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: ListTile(
+                    title: FittedBox(
+                      child: Text(
+                        productEntity.name,
+                        textAlign: TextAlign.right,
+                        style: AppStyle.semibold13.copyWith(
+                          color: const Color(0xFF0C0D0D),
+                        ),
+                      ),
+                    ),
+                    subtitle: FittedBox(
+                        child: Padding(
+                      padding: const EdgeInsets.only(top: 12),
+                      child: RichTextforSubtitle(productEntity: productEntity),
+                    )),
+                    trailing: GestureDetector(
+                      onTap: () {
+                        context.read<CartCubit>().AddProduct(productEntity);
+                      },
+                      child: const CircleAvatar(
+                        backgroundColor: AppColor.kPrimaryColor,
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),

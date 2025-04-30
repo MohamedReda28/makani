@@ -21,7 +21,7 @@ class Checkout_Steps_Listview extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: PageView.builder(
           controller: pageController,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: getPage().length,
           itemBuilder: (context, index) {
             return getPage()[index];
@@ -31,7 +31,7 @@ class Checkout_Steps_Listview extends StatelessWidget {
 
   List<Widget> getPage() {
     return [
-      ScetionShipping(),
+      const ScetionShipping(),
       AddressPageview(
         formKey: formKey,
         valueListenable: valueListenable,

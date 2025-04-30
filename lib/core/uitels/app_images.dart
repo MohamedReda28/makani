@@ -3,8 +3,8 @@ class Assets {
   Assets._();
   
   /// Assets for imagesAppIcon
-  /// Assets/Images/App_Icon.svg
-  static const String imagesAppIcon = "Assets/Images/App_Icon.svg";
+  /// Assets/Images/appIcon.png
+  static const String imagesAppIcon = "Assets/Images/appIcon.png";
 
   /// Assets for imagesAppleIcons
   /// Assets/Images/AppleIcons.svg
@@ -70,6 +70,10 @@ class Assets {
   /// Assets/Images/filter.svg
   static const String imagesFilter = "Assets/Images/filter.svg";
 
+  /// Assets for imagesForcalory
+  /// Assets/Images/forcalory.svg
+  static const String imagesForcalory = "Assets/Images/forcalory.svg";
+
   /// Assets for imagesGoogleIcons
   /// Assets/Images/GoogleIcons.svg
   static const String imagesGoogleIcons = "Assets/Images/GoogleIcons.svg";
@@ -113,7 +117,6 @@ class Assets {
   /// Assets for imagesMenue1
   /// Assets/Images/menue1.jpg
   static const String imagesMenue1 = "Assets/Images/menue1.jpg";
-  static const String imagesSearch = "Assets/Images/searchImage.png";
 
   /// Assets for imagesMenue2
   /// Assets/Images/menue2.jpg
@@ -161,7 +164,15 @@ class Assets {
 
   /// Assets for imagesSearch
   /// Assets/Images/search.svg
-  static const String imagesSearchIcon = "Assets/Images/search.svg";
+  static const String imagesSearch = "Assets/Images/search.svg";
+
+  /// Assets for imagesSearchImage
+  /// Assets/Images/searchImage.png
+  static const String imagesSearchImage = "Assets/Images/searchImage.png";
+
+  /// Assets for imagesShapeindisplay
+  /// Assets/Images/shapeindisplay.svg
+  static const String imagesShapeindisplay = "Assets/Images/shapeindisplay.svg";
 
   /// Assets for imagesShoppingCart
   /// Assets/Images/shopping-cart.svg

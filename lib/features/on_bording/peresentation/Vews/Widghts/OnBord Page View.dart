@@ -16,31 +16,27 @@ class OnBord_Page_View extends StatelessWidget {
           isVisibilty: true,
           //(pageController.hasClients ? pageController.page!.round() : 0) ==0,
           subtitle:
-              'هنا تبدأ رحلتك مع ألذ الأطباق المحضرة من أجود المكونات الطازجة.\n '
-              'نقدم لك تجربة طعام مميزة تجمع بين النكهات الأصيلة والخدمة الراقية، في أجواء دافئة ومريحة.\n'
-              ,
+              'نقدم لك تجربة طعام مميزة تجمع بين النكهات الأصيلة والخدمة الراقية، في أجواء دافئة ومريحة.\n',
           image: Assets.imagesBerger,
           backgroundColor: Assets.imagesPageview1background,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'مرحبًا بك في ',
                 style: AppStyle.bold23,
               ),
-
               Text('Makani',
                   style:
                       AppStyle.bold23.copyWith(color: AppColor.kPrimaryColor)),
             ],
           ),
         ),
-        const PageViewItem(
+        PageViewItem(
           isVisibilty: false,
           // (pageController.hasClients ? pageController.page!.round() : 0) == 0,
           subtitle:
-         'استمتع بأشهى أنواع البيتزا والبرجر المحضرة بأجود المكونات الطازجة.\n'
-         'استعرض قائمتنا وشاهد الصور والتقييمات واختَر وجبتك المثالية بكل سهولة.',
+              'استمتع بأشهى أنواع البيتزا والبرجر المحضرة بأجود المكونات الطازجة.\n',
           image: Assets.imagesPitzza,
           backgroundColor: Assets.imagesPageview2background,
           title: Text(

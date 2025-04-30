@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/Widghts/CustomFrutDisplay/Custom Fruts Display.dart';
 import '../../../../../core/entitys/ProductEntity.dart';
+import '../../../../displayaitem/presentarion/view/DispalyIrtem.dart';
 
 class ProductsGridview extends StatelessWidget {
   const ProductsGridview({super.key, required this.products});
@@ -17,8 +18,17 @@ class ProductsGridview extends StatelessWidget {
         ),
         itemCount: products.length,
         itemBuilder: (context, index) {
-          return CustomFrutDisplay(
-            productEntity: products[index],
+          return GestureDetector(
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DisplayItem(productEntity: products[index]),
+                ),
+              );            },
+            child: CustomFrutDisplay(
+              productEntity: products[index],
+            ),
           );
         });
   }

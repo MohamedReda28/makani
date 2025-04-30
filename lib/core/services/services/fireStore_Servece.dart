@@ -55,19 +55,46 @@ class FirestoerServeces implements DataBaseServeces {
       Query<Map<String, dynamic>> data = firestore.collection(path);
 
       if (query != null) {
-        // ✳️ دعم البحث بالكلمة المفتاحية
+        // ✳ دعم البحث بالكلمة المفتاحية
         if (query['searchField'] != null && query['keyword'] != null) {
           final field = query['searchField'];
           final keyword = query['keyword'];
 
-          data = data
-              .orderBy(field)
-              .startAt([keyword])
-              .endAt(['$keyword\uf8ff']);
+          data =
+              data.orderBy(field).startAt([keyword]).endAt(['$keyword\uf8ff']);
         }
 
         // ترتيب النتائج
-        if (query['orderBy'] != null) {
+        if (query['sortOption'] != null) {
+          String sortOption = query['sortOption'];
+          String orderByField = 'name'; // افتراضي
+          bool descending = false; // افتراضي
+
+          switch (sortOption) {
+            case 'price_desc':
+              orderByField = 'price';
+              descending = true;
+              break;
+            case 'price_asc':
+              orderByField = 'price';
+              descending = false;
+              break;
+            case 'name_asc':
+              orderByField = 'name';
+              descending = false;
+              break;
+            case 'name_desc':
+              orderByField = 'name';
+              descending = true;
+              break;
+            default:
+              // ممكن تسيبها كده أو تحط فالهاندل حسب اللي تحبه
+              break;
+          }
+
+          data = data.orderBy(orderByField, descending: descending);
+        } else if (query['orderBy'] != null) {
+          // لو مفيش sortOption موجود، نرجع للطريقة القديمة
           var orderByField = query['orderBy'];
           var descending = query['descending'] ?? false;
           data = data.orderBy(orderByField, descending: descending);
@@ -85,12 +112,10 @@ class FirestoerServeces implements DataBaseServeces {
     }
   }
 
-
   @override
   Future<bool> chackIfDataExist(
       {required String path, required String documentId}) async {
     var data = await firestore.collection(path).doc(documentId).get();
     return data.exists;
   }
-  
 }

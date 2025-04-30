@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:makani/core/entitys/ProductEntity.dart';
 import '../../features/Best_salling_frut/presentation/Views/Best Salling view.dart';
 import '../../features/Home/domines/entites/CardEntity.dart';
 import '../../features/Home/peresntation/views/mainView.dart';
@@ -9,6 +10,7 @@ import '../../features/auth/peresentation/views/ForgetPass.dart';
 import '../../features/auth/peresentation/views/SiginView.dart';
 import '../../features/auth/peresentation/views/SignupView.dart';
 import '../../features/checkout/presintation/views/checkout_view.dart';
+import '../../features/displayaitem/presentarion/view/DispalyIrtem.dart';
 import '../../features/on_bording/peresentation/Vews/on_bordView.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -31,6 +33,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const ProdutsView());
     case Searchview.routeName:
       return MaterialPageRoute(builder: (context) => const Searchview());
+    case DisplayItem.routeName:
+      return MaterialPageRoute(builder: (context) => DisplayItem(
+        productEntity: settings.arguments as ProductEntity,
+      ));
     case Checkout_View.routeName:
       return MaterialPageRoute(
           builder: (context) => Checkout_View(

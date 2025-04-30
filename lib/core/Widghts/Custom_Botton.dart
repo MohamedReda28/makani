@@ -21,10 +21,12 @@ class CustomBotton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
         ),
-        child: Text(
-          title,
-          textAlign: TextAlign.center,
-          style: AppStyle.bold16.copyWith(color: Colors.white),
+        child: FittedBox(
+          child: Text(
+            title,
+            textAlign: TextAlign.center,
+            style: AppStyle.bold16.copyWith(color: Colors.white),
+          ),
         ),
       ),
     );

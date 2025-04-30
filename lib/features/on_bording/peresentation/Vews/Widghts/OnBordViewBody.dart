@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../constsns.dart';
 import '../../../../../core/Widghts/Custom_Botton.dart';
 import '../../../../../core/services/services/shardpreferance_Singlton.dart';
@@ -43,6 +44,7 @@ class _OnBordViewBodyState extends State<OnBordViewBody> {
             child: OnBord_Page_View(
           pageController: pageController,
         )),
+
         DotsIndicator(
           dotsCount: 2,
           decorator: DotsDecorator(
@@ -52,8 +54,8 @@ class _OnBordViewBodyState extends State<OnBordViewBody> {
                 : AppColor.kPrimaryColor,
           ),
         ),
-        const SizedBox(
-          height: 29,
+         SizedBox(
+          height: 29.h,
         ),
         Visibility(
           maintainSize: true,

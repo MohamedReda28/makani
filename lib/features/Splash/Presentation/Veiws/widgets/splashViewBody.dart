@@ -11,17 +11,7 @@ class SplashViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.end,
-        //   children: [
-        //     SvgPicture.asset(Assets.imagesLeaves),
-        //   ],
-        // ),
         Image.asset(Assets.imagesLogo),
-        // SvgPicture.asset(
-        //   Assets.imagesCircles,
-        //   fit: BoxFit.fill,
-        // ),
       ],
     );
   }

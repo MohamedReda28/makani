@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../constsns.dart';
 import '../../../../../core/Widghts/Custom Password Feild.dart';
 import '../../../../../core/Widghts/CustomTextField.dart';
@@ -39,8 +40,8 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 24,
+               SizedBox(
+                height: 24.h,
               ),
               CustomTextFormField(
                 onSaved: (value) {
@@ -49,16 +50,16 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                 hinttext: 'البريد الإلكتروني',
                 textInputType: TextInputType.emailAddress,
               ),
-              const SizedBox(
-                height: 16,
+               SizedBox(
+                height: 16.h,
               ),
               CustomPasswordFeild(
                 onSaved: (value) {
                   password = value!;
                 },
               ),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: 10.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -75,8 +76,8 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 33,
+               SizedBox(
+                height: 33.h,
               ),
               Center(
                 child: CustomBotton(
@@ -95,8 +96,8 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                   },
                 ),
               ),
-              const SizedBox(
-                height: 33,
+               SizedBox(
+                height: 33.h,
               ),
               DontHaveAccountWidgh(
                 textone: 'لا تمتلك حساب؟',
@@ -105,12 +106,12 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                   Navigator.pushNamed(context, SignUpView.routeName);
                 },
               ),
-              const SizedBox(
-                height: 33,
+               SizedBox(
+                height: 33.h,
               ),
               const CustomDriverAndOr(),
-              const SizedBox(
-                height: 16,
+               SizedBox(
+                height: 16.h,
               ),
               CustomLoginBy(
                 ontap: () {
@@ -119,16 +120,16 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                 title: 'تسجيل بواسطة جوجل',
                 image: Assets.imagesGoogleIcons,
               ),
-              const SizedBox(
-                height: 16,
+               SizedBox(
+                height: 16.h,
               ),
               CustomLoginBy(
                 ontap: () {},
                 title: 'تسجيل بواسطة أبل',
                 image: Assets.imagesAppleIcons,
               ),
-              const SizedBox(
-                height: 16,
+               SizedBox(
+                height: 16.h,
               ),
               CustomLoginBy(
                 ontap: () {
@@ -136,6 +137,9 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                 },
                 title: 'تسجيل بواسطة فيسبوك',
                 image: Assets.imagesFaceBookIcons,
+              ),
+              SizedBox(
+                height: 16.h,
               ),
             ],
           ),

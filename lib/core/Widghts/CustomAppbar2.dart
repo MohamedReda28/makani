@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import '../uitels/App_TextStyle.dart';
 import '../uitels/app_images.dart';
@@ -22,7 +23,11 @@ class CustomAppbar2 extends StatelessWidget {
           visible: visableArw,
           child: GestureDetector(
             onTap: () {
-              Navigator.pop(context);
+              if (Navigator.canPop(context)) {
+                Navigator.pop(context);
+              } else {
+                SystemNavigator.pop();
+              }
             },
             child: SvgPicture.asset(Assets.imagesArrowBack),
           ),

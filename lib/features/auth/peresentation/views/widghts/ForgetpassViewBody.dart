@@ -32,7 +32,7 @@ class _ForgetpassViewBodyState extends State<ForgetpassViewBody> {
               height: 24,
             ),
             Text(
-              'لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.',
+              'لا تقلق ، ما عليك سوى كتابة البريد الالكتروني وسنرسل رساله التحقق .',
               textAlign: TextAlign.right,
               style: AppStyle.semibold16.copyWith(
                 color: const Color(0xFF616A6B),

@@ -11,27 +11,27 @@ class ProductCubit extends Cubit<ProductState> {
   int productLength = 0;
 
   Future<void> getProducts() async {
+    productLength = 0;
     emit(ProductCubitLoading());
     final result = await productRepo.getProduct();
 
     result.fold(
-          (failure) => emit(ProductCubitFailure(failure.message)),
-          (products) {
+      (failure) => emit(ProductCubitFailure(failure.message)),
+      (products) {
         productLength += products.length;
-        emit(ProductCubitSuccess(products, productLength: productLength ));
+        emit(ProductCubitSuccess(products, productLength: productLength));
       },
     );
   }
-
-
 
   Future<void> getSomeBestSellingProduct() async {
     emit(ProductCubitLoading());
     final result = await productRepo.getSomeBestSellingProduct();
     result.fold((failur) => emit(ProductCubitFailure(failur.message)),
         (products) {
-      emit(ProductCubitSuccess(products,));
-
+      emit(ProductCubitSuccess(
+        products,
+      ));
     });
   }
 
@@ -39,9 +39,23 @@ class ProductCubit extends Cubit<ProductState> {
     emit(ProductCubitLoading());
     final result = await productRepo.getAllBestSellingProduct();
     result.fold((failur) => emit(ProductCubitFailure(failur.message)),
-            (products) {
-          emit(ProductCubitSuccess(products,));
+        (products) {
+      emit(ProductCubitSuccess(
+        products,
+      ));
+    });
+  }
 
-        });
+  Future<void> getProductsOrderBy({required String sortOption}) async {
+    productLength = 0;
+    emit(ProductCubitLoading());
+    final result = await productRepo.getProductsOrderBy(sortOption: sortOption);
+    result.fold((failur) => emit(ProductCubitFailure(failur.message)),
+        (products) {
+          productLength += products.length;
+      emit(ProductCubitSuccess(
+        products,productLength: productLength
+      ));
+    });
   }
 }

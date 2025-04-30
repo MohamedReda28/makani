@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../constsns.dart';
 import '../../../../../core/services/services/shardpreferance_Singlton.dart';
 import '../../../../../core/uitels/App_TextStyle.dart';
+import '../../../../../core/uitels/Screen_Size.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem(
@@ -41,6 +43,7 @@ class PageViewItem extends StatelessWidget {
                 bottom: 0,
                 right: 0,
                 left: 0,
+                top: 30,
                 child: Image.asset(image),
               ),
 
@@ -51,8 +54,8 @@ class PageViewItem extends StatelessWidget {
                     SharPref.setBool(kIsBordingViewSeen, true);
                     // Navigator.of(context).pushReplacementNamed(SiginView.routeName);
                   },
-                  child: const Padding(
-                    padding: EdgeInsets.only(top: 60,right: 20),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40,right: 20),
                     child: Text(
                       'تخطي',
                       style: AppStyle.regular13,
@@ -63,19 +66,23 @@ class PageViewItem extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(
-          height: 64,
-        ),
+          SizedBox(
+          height: 24.h,
+                 ),
         title,
-        const SizedBox(
-          height: 24,
+         SizedBox(
+          height: 24.h,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          child: Text(
-            subtitle,
-            textAlign: TextAlign.center,
-            style: AppStyle.semibold13,
+        Flexible(
+          child: Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 32.w),
+            child: Text(
+              subtitle,
+              textAlign: TextAlign.center,
+              style: AppStyle.semibold13,
+              //softWrap: true,
+             // overflow: TextOverflow.visible,
+            ),
           ),
         ),
       ],

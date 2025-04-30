@@ -45,6 +45,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   google_sign_in: ^6.2.1
   uuid: ^4.4.2
+  flutter_screenutil: ^5.8.4
   modal_progress_hud_nsn: ^0.5.1
   shared_preferences: ^2.2.3
   dots_indicator: ^3.0.0
@@ -52,6 +53,7 @@ dependencies:
   flutter_bloc: ^8.1.6
   flutter_facebook_auth: ^7.1.1
   firebase_core: ^3.13.0
+  device_preview: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -88,7 +90,7 @@ flutter:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "Assets/Images/logo.jpg"
+  image_path: "Assets/Images/appIcon.png"
 
 flutter_assets:
   assets_path: Assets/Images/

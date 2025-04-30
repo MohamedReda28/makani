@@ -15,6 +15,6 @@ class ProdutsView extends StatelessWidget {
         create: (context) => ProductCubit(
               getIt<ProductRepo>(),
             ),
-        child: ProdutViewBody());
+        child: const ProdutViewBody());
   }
 }

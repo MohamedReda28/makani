@@ -93,12 +93,14 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               const SizedBox(
                 height: 26,
               ),
-              DontHaveAccountWidgh(
-                textone: 'تمتلك حساب بالفعل؟',
-                texttwo: 'قم بتسجيل الدخول',
-                ontap: () {
-                  Navigator.pop(context);
-                },
+              FittedBox(
+                child: DontHaveAccountWidgh(
+                  textone: 'تمتلك حساب بالفعل؟',
+                  texttwo: 'قم بتسجيل الدخول',
+                  ontap: () {
+                    Navigator.pop(context);
+                  },
+                ),
               ),
             ],
           ),

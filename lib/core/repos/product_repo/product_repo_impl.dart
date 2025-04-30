@@ -92,4 +92,21 @@ class productRepoImpl implements ProductRepo {
     }
   }
 
+  @override
+  Future<Either<Failur, List<ProductEntity>>> getProductsOrderBy({required String sortOption}) async{
+   try{
+     var data =await dataBaseServeces.getData(path: BackEndImpoint.getproducts,query: {
+       'sortOption': sortOption,
+     }) as List<Map<String, dynamic>>;
+     List<ProductModel> products = data.map((e) => ProductModel.fromJson(e)).toList();
+     List<ProductEntity> productEntit = products.map((e) => e.toEntity()).toList();
+
+     return right(productEntit);
+   }catch (e) {
+     return left(ServerFailure('Failed to load products'));
+   }
+  }
+
+
+
 }

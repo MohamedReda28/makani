@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:makani/core/uitels/App_Color.dart';
 import '../../../../../core/uitels/App_TextStyle.dart';
-
 
 class ActiveItem extends StatelessWidget {
   const ActiveItem({
@@ -27,8 +27,8 @@ class ActiveItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              width: 30,
-              height: 30,
+              width: 30.w,
+              height: 30.h,
               decoration: ShapeDecoration(
                 color: AppColor.kPrimaryColor,
                 shape: RoundedRectangleBorder(
@@ -43,10 +43,12 @@ class ActiveItem extends StatelessWidget {
             const SizedBox(
               width: 4,
             ),
-            Text(name,
-                style: AppStyle.semibold11.copyWith(
-                  color: AppColor.kPrimaryColor,
-                ))
+            Flexible(
+              child: Text(name,
+                  style: AppStyle.semibold11.copyWith(
+                    color: AppColor.kPrimaryColor,
+                  )),
+            )
           ],
         ),
       ),

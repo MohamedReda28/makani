@@ -10,6 +10,9 @@ abstract class ProductRepo {
   Future<Either<Failur, List<ProductEntity>>> getAllBestSellingProduct();
   Future<Either<Failur, List<ProductEntity>>> searchProductsByName(
       {required String productName});
+  Future<Either<Failur, List<ProductEntity>>> getProductsOrderBy(
+      {required String sortOption});
+
 }
 
 

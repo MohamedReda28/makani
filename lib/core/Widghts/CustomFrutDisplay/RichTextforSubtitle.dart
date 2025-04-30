@@ -13,14 +13,14 @@ class RichTextforSubtitle extends StatelessWidget {
         children: [
           TextSpan(
             text: '${productEntity.price} جنيه',
-            style: AppStyle.bold13.copyWith(
+            style: AppStyle.bold28.copyWith(
               color: AppColor.secondColor,
             ),
           ),
           TextSpan(
-            text: ' الكيلو',
+            text: '  الكيلو',
             style:
-                AppStyle.semibold13.copyWith(color: AppColor.lightsecondColor),
+                AppStyle.semibold16.copyWith(color: AppColor.lightsecondColor),
           ),
         ],
       ),

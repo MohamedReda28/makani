@@ -7,20 +7,20 @@ class CustomDriverAndOr extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Expanded(
+        const Expanded(
             child: Divider(
           color: Color(0xFFDCDEDE),
         )),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             'أو',
             style: AppStyle.semibold16,
           ),
         ),
-        Expanded(
+        const Expanded(
             child: Divider(
           color: Color(0xFFDCDEDE),
         )),

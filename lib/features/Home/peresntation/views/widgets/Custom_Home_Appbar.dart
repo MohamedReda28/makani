@@ -10,7 +10,7 @@ class CustomHomeAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text('صباح الخير !..',
+      title: Text(' مرحبا !..',
           style: AppStyle.regular16.copyWith(
             color: const Color(0xFF949D9E),
           )),
@@ -23,7 +23,6 @@ class CustomHomeAppbar extends StatelessWidget {
         width: 34,
         height: 34,
         decoration: const ShapeDecoration(
-          color: Color(0xFFFF7B80),
           shape: OvalBorder(),
         ),
         child: Center(child: SvgPicture.asset(Assets.imagesNotification)),

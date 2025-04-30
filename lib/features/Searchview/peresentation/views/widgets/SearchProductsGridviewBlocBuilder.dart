@@ -6,6 +6,9 @@ import '../../../../../core/Widghts/customErrorWidght.dart';
 import '../../../../../core/helpes_function/git_dammy_Product.dart';
 import '../../../../../core/uitels/app_images.dart';
 import '../../../../Home/peresntation/views/widgets/ProductsGridview.dart';
+import 'SearchProductInitialWidget.dart';
+import 'SearchProductSuccessWidget.dart';
+import 'SearchproductLoadingwidget.dart';
 
 class SearchProductsGridviewBlocBuilder extends StatelessWidget {
   const SearchProductsGridviewBlocBuilder({super.key});
@@ -16,30 +19,23 @@ class SearchProductsGridviewBlocBuilder extends StatelessWidget {
         builder: (context, state) {
       if (state is SearchProductInitial) {
         // لو المستخدم ما كتبش حاجة
-        return SliverToBoxAdapter(
-          child: Column(children: [
-            Image.asset(Assets.imagesSearch),
-            const Text(
-              'ابدأ بالبحث عن منتج!',
-              style: TextStyle(fontSize: 18, color: Colors.grey),
-            ),
-          ]),
-        );
+        return const Searchproductinitialwidget();
       }
       if (state is SearchProductSuccess) {
-        return ProductsGridview(products: state.products);
+        if(state.products.isEmpty){
+          return const Searchproductsuccesswidget();
+        }
+        else{
+          return ProductsGridview(products: state.products);
+        }
       } else if (state is SearchProductFaluir) {
         return Customerrorwidght(
           text: state.errorMessage,
         );
       } else {
-        return Skeletonizer.sliver(
-          enabled: true,
-          child: ProductsGridview(
-            products: getDomyProducts(),
-          ),
-        );
+        return const Searchproductloadingwidget();
       }
     });
   }
 }
+

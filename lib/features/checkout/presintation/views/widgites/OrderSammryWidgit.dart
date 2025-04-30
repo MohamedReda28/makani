@@ -15,33 +15,33 @@ class Ordersammrywidgit extends StatelessWidget {
       title: 'ملخص الطلب',
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Row(
             children: [
               Text('المجموع الفرعي :', style: AppStyle.regular13),
-              Spacer(),
+              const Spacer(),
               Text(
                 '${context.read<OrderInputEntity>().cartList.CalculteTotlePrice()} جنيه',
                 style: AppStyle.semibold16,
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Row(
-            children: const [
+            children: [
               Text('التوصيل  :', style: AppStyle.regular13),
-              Spacer(),
+              const Spacer(),
               Text(
                 '${kpriceDelivary} جنيه',
                 style: AppStyle.semibold13,
               )
             ],
           ),
-          Divider(
+          const Divider(
             height: 18,
             thickness: .5,
             color: Color(0xFFCACECE),
@@ -49,14 +49,14 @@ class Ordersammrywidgit extends StatelessWidget {
           Row(
             children: [
               Text('الكلي', style: AppStyle.bold16),
-              Spacer(),
+              const Spacer(),
               Text(
                 '${(context.read<OrderInputEntity>().cartList.CalculteTotlePrice()) + kpriceDelivary} جنيه',
                 style: AppStyle.bold16,
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
         ],

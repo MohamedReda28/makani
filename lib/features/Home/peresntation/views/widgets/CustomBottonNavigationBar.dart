@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../domines/entites/BottonNavigtionarEntite.dart';
 import 'SelectNavigatBarIem.dart';
 
@@ -19,8 +20,8 @@ class _CustombottonnavigationbarState extends State<Custombottonnavigationbar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 375,
-      height: 70,
+      width: 375.w,
+      height: 70.h,
       decoration: const ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(

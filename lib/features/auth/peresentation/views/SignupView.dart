@@ -36,7 +36,7 @@ class SignUpView extends StatelessWidget {
             },
             builder: (context, state) => CustoProgressHUD(
               isLoading: state is SigninLoading ? true : false,
-              child: SignupViewBody(),
+              child: const SignupViewBody(),
             ),
           );
         }),

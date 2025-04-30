@@ -22,26 +22,26 @@ class _BestsallingviewBodyState extends State<BestsallingviewBody> {
   }
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: CustomScrollView(slivers: [
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: kTopPadding,
               ),
-              CustomAppbar2(
+              const CustomAppbar2(
                 title: 'الأكثر مبيعًا',
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Text('الأكثر مبيعًا', style: AppStyle.bold16),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
             ],
           ),
         ),
-        ProductsGridviewBlocBuilder(),
+        const ProductsGridviewBlocBuilder(),
       ]),
     );
   }
