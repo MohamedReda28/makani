@@ -62,12 +62,15 @@ class _OnBordViewBodyState extends State<OnBordViewBody> {
           maintainAnimation: true,
           maintainState: true,
           visible: currntPage == 1,
-          child: CustomBotton(
-            title: 'ابدأ الان',
-            ontap: () {
-              SharPref.setBool(kIsBordingViewSeen, true);
-              Navigator.of(context).pushReplacementNamed(SiginView.routeName);
-            },
+          child: Padding(
+            padding:  const EdgeInsets.symmetric(horizontal: kHorsintalPadding),
+            child: CustomBotton(
+              title: 'ابدأ الان',
+              ontap: () {
+                SharPref.setBool(kIsBordingViewSeen, true);
+                Navigator.of(context).pushReplacementNamed(SiginView.routeName);
+              },
+            ),
           ),
         ),
         const SizedBox(

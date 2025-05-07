@@ -40,7 +40,7 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-               SizedBox(
+              SizedBox(
                 height: 24.h,
               ),
               CustomTextFormField(
@@ -50,7 +50,7 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                 hinttext: 'البريد الإلكتروني',
                 textInputType: TextInputType.emailAddress,
               ),
-               SizedBox(
+              SizedBox(
                 height: 16.h,
               ),
               CustomPasswordFeild(
@@ -58,15 +58,16 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                   password = value!;
                 },
               ),
-               SizedBox(
+              SizedBox(
                 height: 10.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: (){
-                      Navigator.pushReplacementNamed(context, ForgetpassView.routeName);
+                    onTap: () {
+                      Navigator.pushReplacementNamed(
+                          context, ForgetpassView.routeName);
                     },
                     child: Text(
                       'نسيت كلمة المرور؟',
@@ -76,7 +77,7 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                   ),
                 ],
               ),
-               SizedBox(
+              SizedBox(
                 height: 33.h,
               ),
               Center(
@@ -96,7 +97,7 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                   },
                 ),
               ),
-               SizedBox(
+              SizedBox(
                 height: 33.h,
               ),
               DontHaveAccountWidgh(
@@ -106,11 +107,11 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                   Navigator.pushNamed(context, SignUpView.routeName);
                 },
               ),
-               SizedBox(
+              SizedBox(
                 height: 33.h,
               ),
               const CustomDriverAndOr(),
-               SizedBox(
+              SizedBox(
                 height: 16.h,
               ),
               CustomLoginBy(
@@ -120,24 +121,24 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                 title: 'تسجيل بواسطة جوجل',
                 image: Assets.imagesGoogleIcons,
               ),
-               SizedBox(
+              SizedBox(
                 height: 16.h,
               ),
-              CustomLoginBy(
-                ontap: () {},
-                title: 'تسجيل بواسطة أبل',
-                image: Assets.imagesAppleIcons,
-              ),
-               SizedBox(
-                height: 16.h,
-              ),
-              CustomLoginBy(
-                ontap: () {
-                  context.read<SigninCubit>().signInWithFacebook();
-                },
-                title: 'تسجيل بواسطة فيسبوك',
-                image: Assets.imagesFaceBookIcons,
-              ),
+              // CustomLoginBy(
+              //   ontap: () {},
+              //   title: 'تسجيل بواسطة أبل',
+              //   image: Assets.imagesAppleIcons,
+              // ),
+              // SizedBox(
+              //   height: 16.h,
+              // ),
+              // CustomLoginBy(
+              //   ontap: () {
+              //     context.read<SigninCubit>().signInWithFacebook();
+              //   },
+              //   title: 'تسجيل بواسطة فيسبوك',
+              //   image: Assets.imagesFaceBookIcons,
+              // ),
               SizedBox(
                 height: 16.h,
               ),

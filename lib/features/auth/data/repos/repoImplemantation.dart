@@ -140,12 +140,12 @@ class Repoimplemantation extends AuthRepo {
     await SharPref.setString(kUserData, jsonData);
   }
 
-
-  Future<Either<Failur, void>> sendPasswordResetEmail({required String email}) async{
-    try{
+  Future<Either<Failur, void>> sendPasswordResetEmail(
+      {required String email}) async {
+    try {
       await firebaseAuthServece.sendPasswordResetEmail(email: email);
       return right(null);
-    }on CustomException catch (e) {
+    } on CustomException catch (e) {
       return left(ServerFailure(e.message));
     } catch (e) {
       log('Excaption in sendPasswordResetEmail. ${e.toString()}');

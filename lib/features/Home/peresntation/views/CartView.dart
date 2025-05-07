@@ -4,7 +4,6 @@ import 'package:makani/features/Home/peresntation/views/widgets/CartViewBoby.dar
 
 import '../cubits/cartItem/cart_item_cubit.dart';
 
-
 class CartViews extends StatelessWidget {
   const CartViews({super.key});
 

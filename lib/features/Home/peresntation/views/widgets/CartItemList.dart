@@ -23,7 +23,7 @@ class Cartitemlist extends StatelessWidget {
         },
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.symmetric(horizontal: kHorsintalPadding),
+            padding: const EdgeInsets.symmetric(horizontal: kHorsintalPadding),
             child: CartItim(
               cartItemEntity: cartitems[index],
             ),

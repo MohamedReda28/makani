@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import '../../entitys/ProductEntity.dart';
 import '../../uitels/App_Color.dart';
@@ -8,23 +9,15 @@ class RichTextforSubtitle extends StatelessWidget {
   final ProductEntity productEntity;
   @override
   Widget build(BuildContext context) {
-    return Text.rich(
-      TextSpan(
-        children: [
-          TextSpan(
-            text: '${productEntity.price} جنيه',
-            style: AppStyle.bold28.copyWith(
-              color: AppColor.secondColor,
-            ),
-          ),
-          TextSpan(
-            text: '  الكيلو',
-            style:
-                AppStyle.semibold16.copyWith(color: AppColor.lightsecondColor),
-          ),
-        ],
+    return AutoSizeText(
+      '${productEntity.price} جنيه',
+      style: AppStyle.bold23.copyWith(
+        color: AppColor.secondColor,
       ),
-      //textAlign: TextAlign.right,
+      maxLines: 1,
+      minFontSize: 12,
+      overflow: TextOverflow.ellipsis,
     );
+
   }
 }

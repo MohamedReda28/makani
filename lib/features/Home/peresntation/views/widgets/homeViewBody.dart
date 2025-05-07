@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../constsns.dart';
 import '../../../../../core/cubits/product_cubit/product_cubit_cubit.dart';
-import '../../../../Best_salling_frut/presentation/Views/Best Salling view.dart';
+import '../../../../auth/peresentation/views/Views/Best Salling view.dart';
 import '../../../../Searchview/SearchView.dart';
 import 'CustomBestSalar.dart';
 import 'CustomTextFiledForSearch.dart';

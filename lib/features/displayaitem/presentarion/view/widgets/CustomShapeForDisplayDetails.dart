@@ -40,7 +40,7 @@ final ProductEntity productEntity;
                     color: AppColor.kPrimaryColor,
                   )
               ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
               Text(
                 '${productEntity.unitAmount} جرام',
                 textAlign: TextAlign.right,

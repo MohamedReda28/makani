@@ -7,7 +7,9 @@ import '../../../../../core/Widghts/customErrorWidght.dart';
 import '../../../../../core/cubits/product_cubit/product_cubit_cubit.dart';
 import '../../../../../core/helpes_function/git_dammy_Product.dart';
 import '../../../../Searchview/SearchView.dart';
+import 'CustomCategory.dart';
 import 'CustomTextFiledForSearch.dart';
+import 'ListCustomcategory.dart';
 import 'ProductsGridview.dart';
 import 'ProdutviewResult.dart';
 
@@ -54,6 +56,8 @@ class _ProdutViewBodyState extends State<ProdutViewBody> {
                         productleanth: state.productLength!,
                         contextt: context,
                       ),
+                    const SizedBox(height: 12),
+                    const ListCustomcategory(),
                     const SizedBox(height: 12),
                   ],
                 ),
