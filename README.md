@@ -62,7 +62,7 @@
 ![MoreSelling](screenshots/moreselling.png)
 
 ### الفلترة
-![Filtering](screenshots/filtring.png)
+![Filtering](screenshots/filter.png)
 
 ### عرض الوجبة
 ![Display](screenshots/display.png)
