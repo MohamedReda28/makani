@@ -1,16 +1,66 @@
-# makani
+# 🍽️ Makani
 
-A new Flutter project.
+تطبيق مطعم تفاعلي باستخدام Flutter يسمح بتصفح قائمة الطعام، إضافة الطلبات للسلة، وتتبع الطلبات.
 
-## Getting Started
+## 🚀 الخصائص الرئيسية
 
-This project is a starting point for a Flutter application.
+- تسجيل دخول وتسجيل مستخدم جديد
+- تصفح قائمة الطعام
+- إضافة أطباق إلى السلة وإتمام الطلب
+- تتبع حالة الطلب
+- إشعارات فورية (Push Notifications)
+- واجهة استخدام متجاوبة وسهلة
+- تكامل مع Firebase (لإدارة المنتجات، الطلبات، والمستخدمين)
+- أداء عالي بفضل تطبيق أفضل ممارسات Flutter
 
-A few resources to get you started if this is your first Flutter project:
+## 📦 التقنيات والحزم المستخدمة
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter SDK
+- Firebase Auth, Firestore, Messaging
+- Provider أو Riverpod أو Bloc
+- Local Notifications
+- وغيرها...
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 لقطات شاشة
+
+### الشاشة الرئيسية
+![Home](screenshots/home.png)
+
+### البحث
+![Search](screenshots/search.png)
+
+### السلة
+![Cart](screenshots/cart.png)
+
+### الدفع
+![Check](screenshots/check.png)
+
+### المنتج
+![Product](screenshots/product.png)
+
+### العروض
+![More Selling](screenshots/more selling.png)
+
+### الفلترة
+![Filtering](screenshots/filtring.png)
+
+### تسجيل الدخول
+![Login](screenshots/login.png)
+
+### تسجيل الخروج
+![Logout](screenshots/logout.png)
+
+### نسيت كلمة المرور
+![Forget Password](screenshots/forgetpass.png)
+
+### شاشة البداية (Onboarding)
+![Onboarding](screenshots/onbording.png)
+
+### العنوان
+![Address](screenshots/address.png)
+
+### الشحن
+![Shipping](screenshots/sheping.png)
+
+### عرض الوجبة
+![Display](screenshots/display.png)
