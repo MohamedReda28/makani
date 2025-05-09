@@ -18,7 +18,6 @@
 - Flutter SDK
 - Firebase Auth, Firestore, Messaging
 - Provider أو Riverpod أو Bloc
-- Local Notifications
 - وغيرها...
 
 ## 📸 لقطات شاشة
