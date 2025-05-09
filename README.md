@@ -37,47 +37,44 @@
 
 ## 📸 لقطات شاشة
 
-### شاشة البداية (Onboarding)
-![Onboarding](screenshots/onbording.png)
+### 🧭 شاشات البداية وتسجيل الدخول والخروج
 
-### تسجيل الدخول
-![Login](screenshots/login.png)
+<div align="center">
+  <img src="screenshots/onbording.png" width="30%" />
+  <img src="screenshots/login.png" width="30%" />
+  <img src="screenshots/logout.png" width="30%" />
+</div>
 
-### تسجيل الخروج
-![Logout](screenshots/logout.png)
+### 🔐 نسيت كلمة المرور والشاشة الرئيسية والبحث
 
-### نسيت كلمة المرور
-![Forget Password](screenshots/forgetpass.png)
+<div align="center">
+  <img src="screenshots/forgetpass.png" width="30%" />
+  <img src="screenshots/home.png" width="30%" />
+  <img src="screenshots/search.png" width="30%" />
+</div>
 
-### الشاشة الرئيسية
-![Home](screenshots/home.png)
+### 🍔 المنتج، العروض، الفلترة
 
-### البحث
-![Search](screenshots/search.png)
+<div align="center">
+  <img src="screenshots/product.png" width="30%" />
+  <img src="screenshots/moreselling.png" width="30%" />
+  <img src="screenshots/filter.png" width="30%" />
+</div>
 
-### المنتج
-![Product](screenshots/product.png)
+### 🍽️ عرض الوجبة، السلة، العنوان
 
-### العروض
-![MoreSelling](screenshots/moreselling.png)
+<div align="center">
+  <img src="screenshots/display.png" width="30%" />
+  <img src="screenshots/cart.png" width="30%" />
+  <img src="screenshots/address.png" width="30%" />
+</div>
 
-### الفلترة
-![Filtering](screenshots/filter.png)
+### 🚚 الشحن والدفع
 
-### عرض الوجبة
-![Display](screenshots/display.png)
-
-### السلة
-![Cart](screenshots/cart.png)
-
-### العنوان
-![Address](screenshots/address.png)
-
-### الشحن
-![Shipping](screenshots/sheping.png)
-
-### الدفع
-![Check](screenshots/check.png)
+<div align="center">
+  <img src="screenshots/sheping.png" width="30%" />
+  <img src="screenshots/check.png" width="30%" />
+</div>
 
 
 
