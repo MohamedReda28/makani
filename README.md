@@ -16,9 +16,19 @@
 ## 📦 التقنيات والحزم المستخدمة
 
 - Flutter SDK
-- Firebase Auth, Firestore, Messaging
-- Provider أو Riverpod أو Bloc
-- Local Notifications
+- flutter_launcher_icons
+- device_preview
+- shared_preferences
+- flutter_screenutil
+- device_previewdevice_preview
+- dartz
+- auto_size_text
+- equatable
+- flutter_paypal_payment
+- cached_network_image
+- skeletonizer
+- Firebase Auth, Firestore, Supabase
+- cubit 
 - وغيرها...
 
 ## 📸 لقطات شاشة
