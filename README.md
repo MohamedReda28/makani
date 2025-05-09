@@ -59,7 +59,7 @@
 ![Product](screenshots/product.png)
 
 ### العروض
-![More Selling](screenshots/more selling.png)
+![MoreSelling](screenshots/moreselling.png)
 
 ### الفلترة
 ![Filtering](screenshots/filtring.png)
